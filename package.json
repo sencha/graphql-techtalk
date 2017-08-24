@@ -1,0 +1,29 @@
+{
+  "name": "graphql-techtalk",
+  "version": "1.0.0",
+  "description": "Code presented during Sencha's TechTalk on GraphQL, 8/31/2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sencha/graphql-techtalk.git"
+  },
+  "keywords": [
+    "ExtReact",
+    "React",
+    "Apollo",
+    "Relay",
+    "GraphQL"
+  ],
+  "author": "Sencha, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sencha/graphql-techtalk/issues"
+  },
+  "homepage": "https://github.com/sencha/graphql-techtalk#readme",
+  "devDependencies": {
+    "lerna": "^2.1.0"
+  }
+}

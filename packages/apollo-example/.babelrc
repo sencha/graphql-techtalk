@@ -1,0 +1,11 @@
+{
+  "presets": [
+    [ "es2015", { "modules": false } ],
+    "stage-2",
+    "react"
+  ],
+  "plugins": [
+    "@extjs/reactor-babel-plugin",
+    "transform-runtime"
+  ]
+}

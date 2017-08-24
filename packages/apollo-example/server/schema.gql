@@ -1,0 +1,60 @@
+scalar Date
+
+type Employee {
+  id: Int
+  firstName: String
+  lastName: String
+  gender: String
+  yearsActive: Int
+  dateOfBirth: Date
+  active: Boolean
+  rating: Float
+  now: Date
+}
+
+input Filter {
+  property: String
+  value: String
+}
+
+input Sorter {
+  property: String
+  direction: String
+}
+
+input EmployeeInput {
+  id: Int
+  firstName: String
+  lastName: String
+  gender: String
+  yearsActive: Int
+  dateOfBirth: Date
+  active: Boolean
+  rating: Float
+}
+
+type EmployeesResult {
+  total: Int,
+  records: [Employee]
+}
+
+type Query {
+  employee(id: ID): Employee
+  employees(
+    filters: [Filter]
+    sorters: [Sorter],
+    start: Int,
+    limit: Int
+  ) : EmployeesResult
+}
+
+type Mutation {
+  createEmployee(record: EmployeeInput) : Employee
+  updateEmployee(record: EmployeeInput) : MutationResult
+  deleteEmployee(id: ID) : MutationResult
+  deleteEmployees(ids: [ID]) : MutationResult
+}
+
+type MutationResult {
+  success: Boolean
+}
