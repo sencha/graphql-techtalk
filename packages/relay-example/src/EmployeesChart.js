@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Panel } from '@extjs/ext-react';   
 import { Cartesian } from '@extjs/ext-react-charts';
 import { connect } from 'react-redux';
-import { gql } from 'react-apollo';
+import { graphql, createFragmentContainer } from 'react-relay';
 import { avgBy } from './util/data';
 
 Ext.require([
@@ -12,23 +12,14 @@ Ext.require([
     'Ext.chart.series.Line',
 ]);
 
-export default class EmployeesChart extends Component {
+class EmployeesChart extends Component {
 
     static propTypes = {
         employees: PropTypes.object
     };
 
-    static fragment = gql`
-        fragment EmployeesChart on EmployeesResult {
-            records {
-                yearsActive
-                rating
-            }
-        }    
-    `
-
     render() {
-        const { data: { employees, refetch, loading }, ...chartProps } = this.props;
+        const { employees, ...chartProps } = this.props;
 
         return (
             <Panel layout="fit" {...chartProps}>
@@ -60,3 +51,16 @@ export default class EmployeesChart extends Component {
         )
     }
 }
+
+export default connect(state => state.employees)(
+    createFragmentContainer(EmployeesChart, 
+        graphql`
+            fragment EmployeesChart_employees on EmployeesResult {
+                records {
+                    yearsActive
+                    rating
+                }
+            }
+        `
+    )
+);

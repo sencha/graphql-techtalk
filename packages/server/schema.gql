@@ -1,7 +1,11 @@
 scalar Date
 
-type Employee {
-  id: Int
+interface Node {
+  id: ID!
+}
+
+type Employee implements Node {
+  id: ID!
   firstName: String
   lastName: String
   gender: String

@@ -96,9 +96,7 @@ const resolvers = {
 
             return {
                 total: Employee.count({ where }),
-                records: Employee.findAll({ where, order, offset: start, limit }).map(employee => {
-                    return { ...employee.dataValues, now: now }
-                })
+                records: Employee.findAll({ where, order, offset: start, limit })
             }
         }
     },
