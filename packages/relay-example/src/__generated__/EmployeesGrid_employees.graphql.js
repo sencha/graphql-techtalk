@@ -17,7 +17,6 @@ export type EmployeesGrid_employees = {|
     +dateOfBirth: ?any;
     +active: ?boolean;
     +gender: ?string;
-    +now: ?any;
   |}>;
 |};
 */
@@ -84,13 +83,6 @@ const fragment /*: ConcreteFragment*/ = {
           "alias": null,
           "args": null,
           "name": "gender",
-          "storageKey": null
-        },
-        {
-          "kind": "ScalarField",
-          "alias": null,
-          "args": null,
-          "name": "now",
           "storageKey": null
         }
       ],

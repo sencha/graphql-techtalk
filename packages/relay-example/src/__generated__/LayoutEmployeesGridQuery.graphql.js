@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 020f0de8fe7e40c19f758b0efbbe3b09
+ * @relayHash 7e11acbdce3aa6b4cf2bb33c00fd1a2c
  */
 
 /* eslint-disable */
@@ -34,7 +34,6 @@ fragment EmployeesGrid_employees on EmployeesResult {
     dateOfBirth
     active
     gender
-    now
   }
 }
 
@@ -185,13 +184,6 @@ const batch /*: ConcreteBatch*/ = {
                 "kind": "ScalarField",
                 "alias": null,
                 "args": null,
-                "name": "now",
-                "storageKey": null
-              },
-              {
-                "kind": "ScalarField",
-                "alias": null,
-                "args": null,
                 "name": "yearsActive",
                 "storageKey": null
               },
@@ -210,7 +202,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query LayoutEmployeesGridQuery(\n  $filters: [Filter]\n) {\n  employees(filters: $filters) {\n    ...EmployeesGrid_employees\n    ...EmployeesChart_employees\n  }\n}\n\nfragment EmployeesGrid_employees on EmployeesResult {\n  total\n  records {\n    id\n    firstName\n    lastName\n    dateOfBirth\n    active\n    gender\n    now\n  }\n}\n\nfragment EmployeesChart_employees on EmployeesResult {\n  records {\n    yearsActive\n    rating\n    id\n  }\n}\n"
+  "text": "query LayoutEmployeesGridQuery(\n  $filters: [Filter]\n) {\n  employees(filters: $filters) {\n    ...EmployeesGrid_employees\n    ...EmployeesChart_employees\n  }\n}\n\nfragment EmployeesGrid_employees on EmployeesResult {\n  total\n  records {\n    id\n    firstName\n    lastName\n    dateOfBirth\n    active\n    gender\n  }\n}\n\nfragment EmployeesChart_employees on EmployeesResult {\n  records {\n    yearsActive\n    rating\n    id\n  }\n}\n"
 };
 
 module.exports = batch;

@@ -9,10 +9,8 @@
     "start": "babel-node server --presets es2015 stage-2 ",
     "debug": "babel-node --inspect=5858 --debug-brk --nolazy server --presets es2015 stage-2",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --env.prod=true",
-    "build:sdk": "touch build/ext-react/app.json",
     "prod": "cross-env NODE_ENV=production node server",
-    "relay": "relay-compiler --src ./src --schema ../server/schema.gql",
-    "update-schema": "babel-node ./scripts/updateSchema.js"
+    "prestart": "relay-compiler --src ./src --schema ../server/schema.gql"
   },
   "repository": {
     "type": "git",

@@ -39,7 +39,6 @@ class EmployeesGrid extends Component {
                         onChange={this.search} 
                         placeholder="Find by name..." 
                     />
-                    <Button handler={() => refetch()} iconCls="x-fa fa-refresh"/>
                 </Toolbar>
                 <Column text="ID" dataIndex="id" width={50}/>
                 <Column text="First Name" dataIndex="firstName" width={200}/>

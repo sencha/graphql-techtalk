@@ -26,9 +26,5 @@ export default function(webpackConfig, contentBase) {
   app.listen(port, () => console.log(
     `GraphiQL is now running on http://localhost:${port}/graphiql`
   ));
-
-  app.get('/employees', (req, res) => {
-    res.json(data)
-  })
 }
 
