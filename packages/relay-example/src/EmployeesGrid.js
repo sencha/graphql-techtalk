@@ -44,7 +44,7 @@ class EmployeesGrid extends Component {
                 <Column text="First Name" dataIndex="firstName" width={200}/>
                 <Column text="Last Name" dataIndex="lastName" width={200}/>
                 <Column text="Date of Birth" dataIndex="dateOfBirth" width={200} renderer={dateRenderer}/>
-                <Column text="Active" dataIndex="active"/>
+                <Column text="Active" dataIndex="active" renderer={activeRenderer}/>
                 <Column text="Gender" dataIndex="gender"/>
             </Grid>
         )
@@ -53,6 +53,20 @@ class EmployeesGrid extends Component {
 }
 
 const dateRenderer = Ext.util.Format.dateRenderer('n/g/Y');
+const activeRenderer = active => <div {...styles.active[active]}/>;
+
+const styles = {
+    active: {
+        true: {
+            className: 'x-fa fa-check',
+            style: { color: 'green' }
+        },
+        false: {
+            className: 'x-fa fa-close',
+            style: { color: 'red' }
+        }
+    }
+};
 
 export default connect(state => state.employees)(
     createFragmentContainer(EmployeesGrid, 
