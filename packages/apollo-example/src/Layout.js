@@ -17,7 +17,7 @@ function Layout({ dispatch, showOptions, data }) {
                 <Button align="left" iconCls="x-fa fa-bars" handler={() => dispatch(toggleOptions())}/>
             </TitleBar>
             <SearchOptions docked="left" hidden={!showOptions}/>
-            <Container layout="vbox">
+            <Container layout="vbox" masked={data.loading}>
                 <EmployeesGrid 
                     flex={1} 
                     data={data}

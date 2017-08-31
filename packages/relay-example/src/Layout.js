@@ -29,18 +29,20 @@ function Layout({ dispatch, showOptions, criteria }) {
                     }
                 `}
                 render={({ error, props }) => {
+                    const { employees } = props || { employees: null };
+
                     if (error) {
                         return <div>{error.message}</div>;
                     } else {
                         return (
-                            <Container layout="vbox">
+                            <Container layout="vbox" masked={!employees}>
                                 <EmployeesGrid 
                                     flex={1} 
-                                    employees={props && props.employees}
+                                    employees={employees}
                                 />
                                 <EmployeesChart 
                                     flex={1} 
-                                    employees={props && props.employees} 
+                                    employees={employees} 
                                     resizable={{ split: true, edges: 'north' }}
                                 />
                             </Container>

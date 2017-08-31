@@ -7,7 +7,7 @@ import { gql, graphql } from 'react-apollo';
 
 Ext.require('Ext.Function');
 
-export default class EmployeesGrid extends Component {
+class EmployeesGrid extends Component {
 
     static propTypes = {
         criteria: PropTypes.object,
@@ -40,7 +40,6 @@ export default class EmployeesGrid extends Component {
         return (
             <Grid 
                 data={employees && employees.records} 
-                masked={loading && { message: 'Loading...'}}
                 {...gridProps}
             >
                 <Toolbar docked="top">
@@ -79,3 +78,5 @@ const styles = {
         }
     }
 };
+
+export default connect(state => state.employees)(EmployeesGrid);

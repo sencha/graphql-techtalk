@@ -28,7 +28,6 @@ class EmployeesGrid extends Component {
         return (
             <Grid 
                 data={employees && employees.records} 
-                masked={!employees && { message: 'Loading...'}}
                 {...gridProps}
             >
                 <Toolbar docked="top">
