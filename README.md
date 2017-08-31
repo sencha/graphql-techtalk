@@ -42,3 +42,9 @@ Or, run the relay example:
 ```
 npm run relay
 ```
+
+## Further Reading
+
+* [Relay vs Apollo](https://blog.graph.cool/relay-vs-apollo-comparing-graphql-clients-for-react-apps-b40af58c1534)
+* [React Apollo Docs](http://dev.apollodata.com/react/)
+* [Relay Docs](https://facebook.github.io/relay/)
